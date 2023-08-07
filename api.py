@@ -13,6 +13,11 @@ if os.path.isdir(gensim.downloader.BASE_DIR) and \
 else: 
   model = gensim.downloader.load('word2vec-google-news-300')
 
+
+@app.route("/")
+def howdy():
+  return "<p>Howdy, Howdy!</p>"
+
 @app.route('/similar_words', methods=['GET'])
 def similar_words():
   word = request.args.get('word')
